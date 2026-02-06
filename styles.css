@@ -110,26 +110,26 @@ body {
 /* Slide 2 Backgrounds */
 .slide2-top {
     /* "Flip" - Indian guy jumping/energetic movement */
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%),
                 url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover;
 }
 
 .slide2-bottom {
     /* "Thrift" - young people shopping in market/thrift store */
-    background: linear-gradient(135deg, rgba(240, 147, 251, 0.9) 0%, rgba(245, 87, 108, 0.9) 100%),
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.4) 0%, rgba(245, 87, 108, 0.4) 100%),
                 url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80') center/cover;
 }
 
 /* Slide 3 Backgrounds */
 .slide3-top {
     /* "Economical" - savings, piggy bank, money management */
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.9) 100%),
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.4) 0%, rgba(41, 128, 185, 0.4) 100%),
                 url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1600&q=80') center/cover;
 }
 
 .slide3-bottom {
     /* "Ecological" - nature, green environment, sustainability */
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.9) 0%, rgba(39, 174, 96, 0.9) 100%),
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.4) 0%, rgba(39, 174, 96, 0.4) 100%),
                 url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=80') center/cover;
 }
 
@@ -149,6 +149,14 @@ body {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Section Descriptions */
@@ -158,6 +166,14 @@ body {
     line-height: 1.6;
     opacity: 0.95;
     margin: 1rem 0;
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Icon Containers */
@@ -166,6 +182,14 @@ body {
     justify-content: center;
     gap: 2rem;
     margin: 1.5rem 0;
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 .icon {
@@ -240,6 +264,10 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     letter-spacing: 0.05em;
+    /* Enhanced glassmorphism effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .contact-button:hover {
@@ -277,6 +305,8 @@ body {
 .stamp-badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 4px dashed rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     padding: 1rem 2rem;
@@ -285,7 +315,7 @@ body {
     color: white;
     text-align: center;
     transform: rotate(-3deg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     letter-spacing: 0.05em;
     line-height: 1.4;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -310,6 +340,15 @@ body {
     margin-top: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     opacity: 0.95;
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    display: inline-block;
 }
 
 .no-card {
@@ -539,37 +578,6 @@ body {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Slide image container and styling */
-.slide-image-container {
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slide-image {
-    max-width: 300px;
-    max-height: 200px;
-    width: auto;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    animation: fadeInImage 0.8s ease-in;
-}
-
-@keyframes fadeInImage {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 /* Responsive adjustments for carousel dots */
 @media (max-width: 768px) {
     .carousel-dots {
@@ -584,11 +592,6 @@ body {
     
     .slide-message {
         font-size: 3.5rem;
-    }
-    
-    .slide-image {
-        max-width: 250px;
-        max-height: 160px;
     }
 }
 
@@ -605,14 +608,5 @@ body {
     
     .slide-message {
         font-size: 2.5rem;
-    }
-    
-    .slide-image {
-        max-width: 200px;
-        max-height: 130px;
-    }
-    
-    .slide-image-container {
-        margin-bottom: 1rem;
     }
 }
