@@ -12,6 +12,27 @@ body {
     width: 100vw;
 }
 
+/* Logo Container */
+.logo-container {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 300;
+    animation: fadeIn 1s ease-in;
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
 /* Split Screen Layout */
 .buying-section,
 .selling-section {
@@ -52,6 +73,12 @@ body {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Title Spacer - maintains layout when title is removed */
+.section-title-spacer {
+    height: 4rem;
+    margin: 1rem 0;
 }
 
 /* Section Descriptions */
@@ -114,8 +141,7 @@ body {
 .contact-button {
     position: fixed;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 2rem;
     z-index: 200;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -130,13 +156,13 @@ body {
 }
 
 .contact-button:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
 .contact-button:active {
-    transform: translateX(-50%) scale(0.98);
+    transform: scale(0.98);
 }
 
 /* Animations */
@@ -171,8 +197,20 @@ body {
 
 /* Responsive Design - Tablet */
 @media (max-width: 768px) {
+    .logo {
+        max-width: 250px;
+    }
+
+    .logo-container {
+        top: 1.5rem;
+    }
+
     .section-title {
         font-size: 3rem;
+    }
+
+    .section-title-spacer {
+        height: 3rem;
     }
 
     .section-description {
@@ -198,13 +236,27 @@ body {
     .contact-button {
         padding: 0.9rem 2rem;
         font-size: 1rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
     }
 }
 
 /* Responsive Design - Mobile */
 @media (max-width: 480px) {
+    .logo {
+        max-width: 200px;
+    }
+
+    .logo-container {
+        top: 1rem;
+    }
+
     .section-title {
         font-size: 2.5rem;
+    }
+
+    .section-title-spacer {
+        height: 2.5rem;
     }
 
     .section-description {
@@ -232,7 +284,8 @@ body {
     .contact-button {
         padding: 0.8rem 1.8rem;
         font-size: 0.95rem;
-        bottom: 1.5rem;
+        bottom: 1rem;
+        right: 1rem;
     }
 
     .content-wrapper {
@@ -242,8 +295,16 @@ body {
 
 /* High Resolution Displays */
 @media (min-width: 1920px) {
+    .logo {
+        max-width: 400px;
+    }
+
     .section-title {
         font-size: 5rem;
+    }
+
+    .section-title-spacer {
+        height: 5rem;
     }
 
     .section-description {
