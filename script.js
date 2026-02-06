@@ -90,11 +90,12 @@
                 // Show target slide
                 targetSlideElement.classList.add('active');
                 
-                // Update central message visibility
+                // Update central message visibility and animation
                 if (slideNumber === 1) {
                     centralMessage.classList.remove('hidden');
+                    centralMessage.classList.remove('minimized');
                 } else {
-                    centralMessage.classList.add('hidden');
+                    centralMessage.classList.add('minimized');
                 }
                 
                 // Update dots
@@ -112,11 +113,11 @@
             }, FLIP_ANIMATION_DURATION);
         }
 
-        // Auto-advance carousel every 3 seconds
+        // Auto-advance carousel every 6 seconds
         setInterval(() => {
             const nextSlide = currentSlide === 3 ? 1 : currentSlide + 1;
             goToSlide(nextSlide);
-        }, 3000);
+        }, 6000);
 
         // Add subtle parallax effect on mouse move (only on slide 1)
         document.addEventListener('mousemove', function(e) {
