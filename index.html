@@ -8,23 +8,93 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Half - BUYING Section -->
-    <section class="buying-section">
-        <div class="content-wrapper">
-            <div class="icon-container">
-                <span class="icon">🛍️</span>
-                <span class="icon">✨</span>
-                <span class="icon no-card">🚫💳</span>
-            </div>
-            <h1 class="section-title">Buy</h1>
-            <p class="section-description">
-                Discover new treasures, embrace excitement, and bring home what you love
-            </p>
-            <p class="no-card-text">No card required</p>
-        </div>
-    </section>
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+        <!-- Slide 1 - Buy/Sell -->
+        <div class="carousel-slide active" data-slide="1">
+            <!-- Top Half - BUYING Section -->
+            <section class="buying-section">
+                <div class="content-wrapper">
+                    <div class="icon-container">
+                        <span class="icon">🛍️</span>
+                        <span class="icon">✨</span>
+                        <span class="icon no-card">🚫💳</span>
+                    </div>
+                    <h1 class="section-title">Buy</h1>
+                    <p class="section-description">
+                        Discover new treasures, embrace excitement, and bring home what you love
+                    </p>
+                    <p class="no-card-text">No card required</p>
+                </div>
+            </section>
 
-    <!-- Central Message -->
+            <!-- Bottom Half - SELLING Section -->
+            <section class="selling-section">
+                <div class="content-wrapper">
+                    <div class="stamp-badge">
+                        SELL ANYTHING<br>IN 5 MINUTES
+                    </div>
+                    <h1 class="section-title hidden-preserve-layout">Sell</h1>
+                    <p class="section-description">
+                        Say "bye bye" to unused items, declutter your space, and make room for the new
+                    </p>
+                    <div class="icon-container">
+                        <span class="icon">👋</span>
+                        <span class="icon">📦</span>
+                        <span class="icon">💸</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 2 - We Flip and We Thrift -->
+        <div class="carousel-slide" data-slide="2">
+            <!-- Top Half -->
+            <section class="buying-section slide2-top">
+                <div class="content-wrapper">
+                    <h1 class="section-title slide-message">We Flip</h1>
+                    <p class="section-description">
+                        Transforming your treasures into opportunities
+                    </p>
+                </div>
+            </section>
+
+            <!-- Bottom Half -->
+            <section class="selling-section slide2-bottom">
+                <div class="content-wrapper">
+                    <h1 class="section-title slide-message">We Thrift</h1>
+                    <p class="section-description">
+                        Smart choices, sustainable living
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 3 - Economical and Ecological -->
+        <div class="carousel-slide" data-slide="3">
+            <!-- Top Half -->
+            <section class="buying-section slide3-top">
+                <div class="content-wrapper">
+                    <h1 class="section-title slide-message">Economical</h1>
+                    <p class="section-description">
+                        Save money while finding what you need
+                    </p>
+                </div>
+            </section>
+
+            <!-- Bottom Half -->
+            <section class="selling-section slide3-bottom">
+                <div class="content-wrapper">
+                    <h1 class="section-title slide-message">Ecological</h1>
+                    <p class="section-description">
+                        Reduce waste, protect our planet
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Central Message (only visible on slide 1) -->
     <div class="central-message">
         <img src="images/buybye-logo.svg" alt="Buybye Logo" class="logo">
         <h2 class="core-message">
@@ -33,23 +103,12 @@
         </h2>
     </div>
 
-    <!-- Bottom Half - SELLING Section -->
-    <section class="selling-section">
-        <div class="content-wrapper">
-            <div class="stamp-badge">
-                SELL ANYTHING<br>IN 5 MINUTES
-            </div>
-            <h1 class="section-title hidden-preserve-layout">Sell</h1>
-            <p class="section-description">
-                Say "bye bye" to unused items, declutter your space, and make room for the new
-            </p>
-            <div class="icon-container">
-                <span class="icon">👋</span>
-                <span class="icon">📦</span>
-                <span class="icon">💸</span>
-            </div>
-        </div>
-    </section>
+    <!-- Carousel Navigation Dots -->
+    <div class="carousel-dots">
+        <span class="dot active" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+    </div>
 
     <!-- Floating Contact Button -->
     <a href="#contact" class="contact-button" id="contactBtn">
