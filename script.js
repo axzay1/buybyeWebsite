@@ -42,8 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     const sections = document.querySelectorAll('.buying-section, .selling-section');
     sections.forEach((section, index) => {
+        section.style.opacity = '0';
         setTimeout(() => {
-            section.style.opacity = '0';
+            section.style.transition = 'opacity 0.6s ease-in';
             section.style.opacity = '1';
         }, index * 200);
     });
