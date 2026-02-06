@@ -5,6 +5,7 @@
     // Constants
     const FLIP_ANIMATION_DURATION = 1000; // Must match CSS animation duration
     const TRANSITION_HALFWAY_DELAY = FLIP_ANIMATION_DURATION / 2;
+    const MINIMIZE_ANIMATION_DURATION = 800; // Must match CSS transition duration for central-message
     
     // Carousel State
     let currentSlide = 1; // Using 1-based indexing to match HTML data-slide attributes
@@ -92,10 +93,19 @@
                 
                 // Update central message visibility and animation
                 if (slideNumber === 1) {
+                    // Returning to slide 1: Make visible first, then animate to center
                     centralMessage.classList.remove('hidden');
-                    centralMessage.classList.remove('minimized');
+                    // Small delay to ensure hidden class is removed before removing minimized
+                    setTimeout(() => {
+                        centralMessage.classList.remove('minimized');
+                    }, 10);
                 } else {
+                    // Moving away from slide 1: Animate to top-left, then hide
                     centralMessage.classList.add('minimized');
+                    // After animation completes, hide the container
+                    setTimeout(() => {
+                        centralMessage.classList.add('hidden');
+                    }, MINIMIZE_ANIMATION_DURATION);
                 }
                 
                 // Update dots
