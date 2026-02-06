@@ -2,8 +2,12 @@
 
 // Carousel functionality wrapped in IIFE
 (function() {
+    // Constants
+    const FLIP_ANIMATION_DURATION = 1000; // Must match CSS animation duration
+    const TRANSITION_HALFWAY_DELAY = FLIP_ANIMATION_DURATION / 2;
+    
     // Carousel State
-    let currentSlide = 1;
+    let currentSlide = 1; // Using 1-based indexing to match HTML data-slide attributes
     let isFlipping = false;
     let flipDirection = 'normal'; // 'normal' or 'reverse'
 
@@ -98,14 +102,14 @@
                 document.querySelector(`.dot[data-slide="${slideNumber}"]`).classList.add('active');
                 
                 currentSlide = slideNumber;
-            }, 500);
+            }, TRANSITION_HALFWAY_DELAY);
             
             // Remove flip animation classes after animation completes
             setTimeout(() => {
                 currentTopSection.classList.remove('flipping', 'flipping-reverse');
                 currentBottomSection.classList.remove('flipping', 'flipping-reverse');
                 isFlipping = false;
-            }, 1000);
+            }, FLIP_ANIMATION_DURATION);
         }
 
         // Auto-advance carousel (optional - commented out)
