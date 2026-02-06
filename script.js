@@ -5,11 +5,13 @@
     // Constants
     const FLIP_ANIMATION_DURATION = 1000; // Must match CSS animation duration
     const TRANSITION_HALFWAY_DELAY = FLIP_ANIMATION_DURATION / 2;
+    const MINIMIZE_ANIMATION_DURATION = 800; // Must match CSS transition duration for central-message
     
     // Carousel State
     let currentSlide = 1; // Using 1-based indexing to match HTML data-slide attributes
     let isFlipping = false;
     let flipDirection = 'normal'; // 'normal' or 'reverse'
+    let hideTimeout = null; // Track timeout for hiding central message
 
     // Contact Button Interaction
     document.addEventListener('DOMContentLoaded', function() {
@@ -90,11 +92,26 @@
                 // Show target slide
                 targetSlideElement.classList.add('active');
                 
-                // Update central message visibility
+                // Update central message visibility and animation
                 if (slideNumber === 1) {
+                    // Returning to slide 1: Clear any pending hide timeout and make visible
+                    if (hideTimeout) {
+                        clearTimeout(hideTimeout);
+                        hideTimeout = null;
+                    }
                     centralMessage.classList.remove('hidden');
+                    // Small delay to ensure hidden class is removed before removing minimized
+                    setTimeout(() => {
+                        centralMessage.classList.remove('minimized');
+                    }, 10);
                 } else {
-                    centralMessage.classList.add('hidden');
+                    // Moving away from slide 1: Animate to top-left, then hide
+                    centralMessage.classList.add('minimized');
+                    // After animation completes, hide the container
+                    hideTimeout = setTimeout(() => {
+                        centralMessage.classList.add('hidden');
+                        hideTimeout = null;
+                    }, MINIMIZE_ANIMATION_DURATION);
                 }
                 
                 // Update dots
@@ -112,11 +129,11 @@
             }, FLIP_ANIMATION_DURATION);
         }
 
-        // Auto-advance carousel every 3 seconds
+        // Auto-advance carousel every 6 seconds
         setInterval(() => {
             const nextSlide = currentSlide === 3 ? 1 : currentSlide + 1;
             goToSlide(nextSlide);
-        }, 3000);
+        }, 6000);
 
         // Add subtle parallax effect on mouse move (only on slide 1)
         document.addEventListener('mousemove', function(e) {

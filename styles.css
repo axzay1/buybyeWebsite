@@ -257,7 +257,12 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                top 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                left 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
@@ -271,6 +276,19 @@ body {
     visibility: hidden;
 }
 
+/* Animation for central message when moving to top-left */
+.central-message.minimized {
+    top: 2rem;
+    left: 2rem;
+    transform: scale(0.4);
+    padding: 0.5rem 1rem;
+}
+
+/* Hide core message when minimized */
+.central-message.minimized .core-message {
+    display: none;
+}
+
 .core-message {
     font-size: 2rem;
     font-weight: 700;
@@ -281,11 +299,35 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Logo Container */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 /* Logo */
 .logo {
     max-width: 120px;
     height: auto;
     display: block;
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo-buy {
+    color: #667eea;
+}
+
+.logo-bye {
+    color: #f5576c;
 }
 
 /* Floating Contact Button */
@@ -433,9 +475,18 @@ body {
     .central-message {
         padding: 1rem 2rem;
     }
+    
+    .central-message.minimized {
+        top: 1.5rem;
+        left: 1.5rem;
+    }
 
     .logo {
         max-width: 80px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
     }
 
     .icon {
@@ -482,9 +533,19 @@ body {
         padding: 0.8rem 1.2rem;
         max-width: 90vw;
     }
+    
+    .central-message.minimized {
+        top: 1rem;
+        left: 1rem;
+        transform: scale(0.35);
+    }
 
     .logo {
         max-width: 60px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
     }
 
     .icon {
@@ -536,6 +597,10 @@ body {
 
     .logo {
         max-width: 150px;
+    }
+    
+    .logo-text {
+        font-size: 2.2rem;
     }
 
     .icon {
