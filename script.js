@@ -11,6 +11,7 @@
     let currentSlide = 1; // Using 1-based indexing to match HTML data-slide attributes
     let isFlipping = false;
     let flipDirection = 'normal'; // 'normal' or 'reverse'
+    let hideTimeout = null; // Track timeout for hiding central message
 
     // Contact Button Interaction
     document.addEventListener('DOMContentLoaded', function() {
@@ -93,7 +94,11 @@
                 
                 // Update central message visibility and animation
                 if (slideNumber === 1) {
-                    // Returning to slide 1: Make visible first, then animate to center
+                    // Returning to slide 1: Clear any pending hide timeout and make visible
+                    if (hideTimeout) {
+                        clearTimeout(hideTimeout);
+                        hideTimeout = null;
+                    }
                     centralMessage.classList.remove('hidden');
                     // Small delay to ensure hidden class is removed before removing minimized
                     setTimeout(() => {
@@ -103,8 +108,9 @@
                     // Moving away from slide 1: Animate to top-left, then hide
                     centralMessage.classList.add('minimized');
                     // After animation completes, hide the container
-                    setTimeout(() => {
+                    hideTimeout = setTimeout(() => {
                         centralMessage.classList.add('hidden');
+                        hideTimeout = null;
                     }, MINIMIZE_ANIMATION_DURATION);
                 }
                 
