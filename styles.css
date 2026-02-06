@@ -213,6 +213,12 @@ body {
     font-size: 3.5rem;
 }
 
+/* Hidden title that preserves spacing */
+.hidden-preserve-layout {
+    visibility: hidden;
+    margin: 1rem 0;
+}
+
 /* Hover Effects */
 .buying-section:hover {
     transform: scale(1.01);
