@@ -1,0 +1,70 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#667eea" opacity="0.1"/>
+  
+  <!-- Animated arrow going out (selling - bye bye) -->
+  <g id="arrow-out">
+    <path d="M 70 100 L 90 100 L 85 95 M 90 100 L 85 105" 
+          stroke="#f5576c" stroke-width="4" stroke-linecap="round" fill="none">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0 0; -30 0; 0 0" 
+                        dur="3s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity" 
+               values="1; 0; 1" 
+               dur="3s" 
+               repeatCount="indefinite"/>
+    </path>
+    <text x="50" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f5576c">
+      <tspan>Bye</tspan>
+      <animate attributeName="opacity" 
+               values="1; 0; 1" 
+               dur="3s" 
+               repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- Center B logo -->
+  <g id="center-logo">
+    <circle cx="100" cy="100" r="35" fill="#764ba2" stroke="white" stroke-width="3"/>
+    <text x="100" y="115" font-family="Arial, sans-serif" font-size="40" font-weight="bold" 
+          fill="white" text-anchor="middle">B</text>
+  </g>
+  
+  <!-- Animated arrow coming in (buying - hello) -->
+  <g id="arrow-in">
+    <path d="M 130 100 L 110 100 L 115 95 M 110 100 L 115 105" 
+          stroke="#667eea" stroke-width="4" stroke-linecap="round" fill="none">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0 0; 30 0; 0 0" 
+                        dur="3s" 
+                        repeatCount="indefinite"
+                        begin="1.5s"/>
+      <animate attributeName="opacity" 
+               values="0; 1; 0" 
+               dur="3s" 
+               repeatCount="indefinite"
+               begin="1.5s"/>
+    </path>
+    <text x="135" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#667eea">
+      <tspan>Buy</tspan>
+      <animate attributeName="opacity" 
+               values="0; 1; 0" 
+               dur="3s" 
+               repeatCount="indefinite"
+               begin="1.5s"/>
+    </text>
+  </g>
+  
+  <!-- Small decorative elements -->
+  <circle cx="60" cy="60" r="3" fill="#667eea">
+    <animate attributeName="r" values="3; 5; 3" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5; 1; 0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="140" r="3" fill="#f5576c">
+    <animate attributeName="r" values="3; 5; 3" dur="2s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="opacity" values="0.5; 1; 0.5" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+</svg>
