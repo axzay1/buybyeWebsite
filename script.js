@@ -112,11 +112,11 @@
             }, FLIP_ANIMATION_DURATION);
         }
 
-        // Auto-advance carousel (optional - commented out)
-        // setInterval(() => {
-        //     const nextSlide = currentSlide === 3 ? 1 : currentSlide + 1;
-        //     goToSlide(nextSlide);
-        // }, 5000);
+        // Auto-advance carousel every 3 seconds
+        setInterval(() => {
+            const nextSlide = currentSlide === 3 ? 1 : currentSlide + 1;
+            goToSlide(nextSlide);
+        }, 3000);
 
         // Add subtle parallax effect on mouse move (only on slide 1)
         document.addEventListener('mousemove', function(e) {
