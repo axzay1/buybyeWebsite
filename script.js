@@ -3,19 +3,36 @@
 // Contact Button Interaction
 document.addEventListener('DOMContentLoaded', function() {
     const contactBtn = document.getElementById('contactBtn');
+    const snackbar = document.getElementById('snackbar');
     
     // Add click handler for contact button
     contactBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Create a simple alert for now (can be replaced with a modal or form later)
-        const userChoice = confirm('Would you like to get in touch with Buybye?\n\nClick OK to send an email, or Cancel to close this message.');
+        // Email address to copy
+        const email = 'axzay@buybye.in';
         
-        if (userChoice) {
-            // Open email client with pre-filled subject
-            window.location.href = 'mailto:contact@buybye.com?subject=Inquiry about Buybye';
-        }
+        // Copy email to clipboard
+        navigator.clipboard.writeText(email).then(function() {
+            // Show snackbar with success message
+            showSnackbar('email id copied to clipboard');
+        }).catch(function(err) {
+            // Fallback for older browsers or if clipboard API fails
+            console.error('Failed to copy email:', err);
+            showSnackbar('Failed to copy email');
+        });
     });
+    
+    // Function to show snackbar
+    function showSnackbar(message) {
+        snackbar.textContent = message;
+        snackbar.className = 'snackbar show';
+        
+        // Hide snackbar after 3 seconds
+        setTimeout(function() {
+            snackbar.className = snackbar.className.replace('show', '');
+        }, 3000);
+    }
 
     // Add subtle parallax effect on mouse move
     document.addEventListener('mousemove', function(e) {
