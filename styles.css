@@ -95,13 +95,26 @@ body {
     }
 }
 
-/* Top Half - BUYING Section */
+/* Top Half - BUYING Section - Slide 1 */
+.carousel-slide[data-slide="1"] .buying-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%),
+                url('images/buy.png') center/cover;
+    color: white;
+}
+
+/* Bottom Half - SELLING Section - Slide 1 */
+.carousel-slide[data-slide="1"] .selling-section {
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.4) 0%, rgba(245, 87, 108, 0.4) 100%),
+                url('images/sell.png') center/cover;
+    color: white;
+}
+
+/* Default backgrounds for other slides */
 .buying-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
-/* Bottom Half - SELLING Section */
 .selling-section {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     color: white;
@@ -109,28 +122,28 @@ body {
 
 /* Slide 2 Backgrounds */
 .slide2-top {
-    /* "Flip" - Indian guy jumping/energetic movement */
+    /* "Flip" */
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%),
-                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover;
+                url('images/flip.png') center/cover;
 }
 
 .slide2-bottom {
-    /* "Thrift" - young people shopping in market/thrift store */
+    /* "Thrift" */
     background: linear-gradient(135deg, rgba(240, 147, 251, 0.4) 0%, rgba(245, 87, 108, 0.4) 100%),
-                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80') center/cover;
+                url('images/thrift.png') center/cover;
 }
 
 /* Slide 3 Backgrounds */
 .slide3-top {
-    /* "Economical" - savings, piggy bank, money management */
+    /* "Economical" */
     background: linear-gradient(135deg, rgba(52, 152, 219, 0.4) 0%, rgba(41, 128, 185, 0.4) 100%),
-                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1600&q=80') center/cover;
+                url('images/economical.png') center/cover;
 }
 
 .slide3-bottom {
-    /* "Ecological" - nature, green environment, sustainability */
+    /* "Ecological" */
     background: linear-gradient(135deg, rgba(46, 204, 113, 0.4) 0%, rgba(39, 174, 96, 0.4) 100%),
-                url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=80') center/cover;
+                url('images/ecological.png') center/cover;
 }
 
 /* Content Wrapper */
@@ -232,17 +245,25 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    background: rgba(255, 255, 255, 0.98);
+    /* Glassmorphism effect with fallback */
+    background: rgba(255, 255, 255, 0.25); /* Fallback for non-supporting browsers */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1.5rem 3rem;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .central-message {
+        background: rgba(255, 255, 255, 0.15);
+    }
 }
 
 .central-message.hidden {
@@ -253,10 +274,11 @@ body {
 .core-message {
     font-size: 2rem;
     font-weight: 700;
-    color: #333;
+    color: white;
     text-align: center;
     line-height: 1.4;
     max-width: 600px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Logo */
