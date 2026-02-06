@@ -12,14 +12,16 @@ This landing page features a split-screen design that visually represents the du
 - **Split-screen design**: Top half for buying, bottom half for selling
 - **Responsive design** that adapts to desktop, tablet, and mobile devices
 - **Modern aesthetics** with gradient backgrounds and smooth animations
-- **Central message** prominently displayed in the middle of the screen
-- **Floating contact button** for easy user engagement
+- **Central message** prominently displayed with animated logo in the middle of the screen
+- **Floating contact button** positioned in bottom right for easy user engagement
+- **Animated logo** showing the buy/sell concept with smooth SVG animations
 
 ### Visual Elements
-- **Buying Section (Top)**: Purple gradient background with emojis (🛍️, ✨, 💳) representing the excitement of purchasing
-- **Selling Section (Bottom)**: Pink-red gradient background with emojis (👋, 📦, 💸) representing decluttering and selling
+- **Buying Section (Top)**: Purple gradient background with emojis (🛍️, ✨, 🚫💳) emphasizing "No card required"
+- **Selling Section (Bottom)**: Pink-red gradient background with "Sell anything in 5 minutes" stamp badge and emojis (👋, 📦, 💸)
 - **Interactive hover effects** on sections
 - **Floating animations** on icons
+- **Pulse animation** on the stamp badge for prominence
 - **Subtle parallax effect** on mouse movement
 
 ## Technical Stack
@@ -34,6 +36,8 @@ buybyeWebsite/
 ├── index.html      # Main HTML structure
 ├── styles.css      # All styling and responsive design
 ├── script.js       # Interactive JavaScript
+├── images/         # Image assets
+│   └── buybye-logo.svg  # Animated SVG logo
 └── README.md       # Project documentation
 ```
 
@@ -114,8 +118,10 @@ Edit `script.js` to customize:
 The landing page embodies the Buybye concept:
 1. **Duality**: Split design represents buying and selling as two sides of the same coin
 2. **Balance**: Equal emphasis on both activities
-3. **Clarity**: Immediate understanding of the core message
-4. **Engagement**: Interactive elements encourage user interaction
+3. **Clarity**: Immediate understanding of the core message - "Make room. Make the move. Sell to buy."
+4. **Engagement**: Interactive elements and animations encourage user interaction
+5. **Speed**: "Sell anything in 5 minutes" stamp emphasizes the quick and easy process
+6. **No Barriers**: "No card required" messaging removes friction from the buying process
 
 ## License
 [Add your license here]
