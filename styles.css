@@ -78,6 +78,10 @@ body {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
+.icon.no-card {
+    letter-spacing: -0.2em;
+}
+
 .icon:nth-child(2) {
     animation-delay: 0.5s;
 }
@@ -94,7 +98,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 100;
     background: rgba(255, 255, 255, 0.98);
-    padding: 2rem 3rem;
+    padding: 1.5rem 3rem;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
@@ -108,6 +112,40 @@ body {
     text-align: center;
     line-height: 1.4;
     max-width: 600px;
+}
+
+/* Stamp Badge */
+.stamp-badge {
+    display: inline-block;
+    position: relative;
+    margin: 1rem 0;
+    padding: 0.8rem 1.5rem;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(-3deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: stampPulse 2s ease-in-out infinite;
+}
+
+.stamp-text {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1.3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    display: block;
+}
+
+@keyframes stampPulse {
+    0%, 100% {
+        transform: rotate(-3deg) scale(1);
+    }
+    50% {
+        transform: rotate(-3deg) scale(1.05);
+    }
 }
 
 /* Floating Contact Button */
@@ -184,7 +222,15 @@ body {
     }
 
     .central-message {
-        padding: 1.5rem 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .stamp-badge {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .stamp-text {
+        font-size: 1.1rem;
     }
 
     .icon {
@@ -213,12 +259,23 @@ body {
     }
 
     .core-message {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.3;
     }
 
     .central-message {
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1.5rem;
         max-width: 90vw;
+    }
+
+    .stamp-badge {
+        padding: 0.5rem 1rem;
+        border-width: 3px;
+    }
+
+    .stamp-text {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
     }
 
     .icon {
