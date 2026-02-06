@@ -149,14 +149,20 @@ body {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    /* Glassmorphism effect */
-    background: rgba(255, 255, 255, 0.15);
+    /* Glassmorphism effect with fallback */
+    background: rgba(255, 255, 255, 0.25); /* Fallback for non-supporting browsers */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     padding: 1rem 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .section-title {
+        background: rgba(255, 255, 255, 0.15);
+    }
 }
 
 /* Section Descriptions */
@@ -166,8 +172,8 @@ body {
     line-height: 1.6;
     opacity: 0.95;
     margin: 1rem 0;
-    /* Glassmorphism effect */
-    background: rgba(255, 255, 255, 0.15);
+    /* Glassmorphism effect with fallback */
+    background: rgba(255, 255, 255, 0.25); /* Fallback for non-supporting browsers */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -176,20 +182,32 @@ body {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .section-description {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
 /* Icon Containers */
 .icon-container {
     display: flex;
     justify-content: center;
     gap: 2rem;
     margin: 1.5rem 0;
-    /* Glassmorphism effect */
-    background: rgba(255, 255, 255, 0.1);
+    /* Glassmorphism effect with fallback */
+    background: rgba(255, 255, 255, 0.2); /* Fallback for non-supporting browsers */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 1.5rem 2rem;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+    .icon-container {
+        background: rgba(255, 255, 255, 0.1);
+    }
 }
 
 .icon {
@@ -340,8 +358,8 @@ body {
     margin-top: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     opacity: 0.95;
-    /* Glassmorphism effect */
-    background: rgba(255, 255, 255, 0.15);
+    /* Glassmorphism effect with fallback */
+    background: rgba(255, 255, 255, 0.25); /* Fallback for non-supporting browsers */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -349,6 +367,12 @@ body {
     padding: 0.5rem 1.5rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     display: inline-block;
+}
+
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+    .no-card-text {
+        background: rgba(255, 255, 255, 0.15);
+    }
 }
 
 .no-card {
