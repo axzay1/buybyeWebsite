@@ -133,7 +133,7 @@ Netlify offers easy deployment with automatic HTTPS and continuous deployment.
 - [ ] SSL certificate is active (padlock icon in browser)
 - [ ] All images load correctly
 - [ ] Carousel transitions work smoothly
-- [ ] Logo animation works (moves to top-right on slides 2 and 3)
+- [ ] Logo animation works (stays centered and scales down on slides 2 and 3)
 - [ ] Contact button copies email address
 - [ ] Website is responsive on mobile devices
 - [ ] Google Font "Londrina Shadow" loads for logo text
