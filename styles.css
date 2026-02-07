@@ -281,7 +281,13 @@ body {
     top: 2rem;
     left: 2rem;
     transform: scale(0.4);
-    padding: 0.5rem 1rem;
+    padding: 0;
+    /* Remove glass effect when minimized */
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
 }
 
 /* Hide core message when minimized */
