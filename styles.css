@@ -154,7 +154,7 @@ body {
 
 .slide3-bottom {
     /* "Ecological" */
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.4) 0%, rgba(39, 174, 96, 0.4) 100%),
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.4) 0%, rgba(245, 87, 108, 0.4) 100%),
                 url('images/ecological.png') center/cover;
 }
 
@@ -168,8 +168,8 @@ body {
 
 /* Section Titles */
 .section-title {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 400;
     margin: 1rem 0;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -339,18 +339,18 @@ body {
 /* Logo Text */
 .logo-text {
     font-family: 'Londrina Shadow', cursive;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2.1rem;
+    font-weight: 8  00;
     letter-spacing: 0.05em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .logo-buy {
-    color: #667eea;
+    color: #f5576c;
 }
 
 .logo-bye {
-    color: #f5576c;
+    color: #667eea;
 }
 
 /* Floating Contact Button */
