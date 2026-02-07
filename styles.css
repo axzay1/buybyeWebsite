@@ -294,12 +294,9 @@ body {
     pointer-events: none;
 }
 
-/* Animation for central message when moving to top-right */
+/* Animation for central message - stay centered and minimize */
 .central-message.minimized {
-    top: 2rem;
-    right: 2rem;
-    left: auto;
-    transform: translate(0, 0) scale(0.4);
+    transform: translate(-50%, -50%) scale(0.4);
     padding: 0;
     /* Remove glass effect when minimized */
     background: transparent;
@@ -503,9 +500,7 @@ body {
     }
     
     .central-message.minimized {
-        top: 1.5rem;
-        right: 1.5rem;
-        left: auto;
+        transform: translate(-50%, -50%) scale(0.4);
     }
 
     .logo {
@@ -562,10 +557,7 @@ body {
     }
     
     .central-message.minimized {
-        top: 1rem;
-        right: 1rem;
-        left: auto;
-        transform: scale(0.35);
+        transform: translate(-50%, -50%) scale(0.35);
     }
 
     .logo {
