@@ -29,7 +29,7 @@
             // Copy email to clipboard
             navigator.clipboard.writeText(email).then(function() {
                 // Show snackbar with success message
-                showSnackbar('email id copied to clipboard');
+                showSnackbar('Email-id copied to Clipboard');
             }).catch(function(err) {
                 // Fallback for older browsers or if clipboard API fails
                 console.error('Failed to copy email:', err);
