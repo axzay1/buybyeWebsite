@@ -5,13 +5,12 @@
     // Constants
     const FLIP_ANIMATION_DURATION = 1000; // Must match CSS animation duration
     const TRANSITION_HALFWAY_DELAY = FLIP_ANIMATION_DURATION / 2;
-    const MINIMIZE_ANIMATION_DURATION = 800; // Must match CSS transition duration for central-message
+    const MINIMIZE_ANIMATION_DURATION = 800; // Must match CSS transition duration for central-message movement
     
     // Carousel State
     let currentSlide = 1; // Using 1-based indexing to match HTML data-slide attributes
     let isFlipping = false;
     let flipDirection = 'normal'; // 'normal' or 'reverse'
-    let hideTimeout = null; // Track timeout for hiding central message
 
     // Contact Button Interaction
     document.addEventListener('DOMContentLoaded', function() {
@@ -94,24 +93,13 @@
                 
                 // Update central message visibility and animation
                 if (slideNumber === 1) {
-                    // Returning to slide 1: Clear any pending hide timeout and make visible
-                    if (hideTimeout) {
-                        clearTimeout(hideTimeout);
-                        hideTimeout = null;
-                    }
-                    centralMessage.classList.remove('hidden');
-                    // Small delay to ensure hidden class is removed before removing minimized
-                    setTimeout(() => {
-                        centralMessage.classList.remove('minimized');
-                    }, 10);
+                    // Returning to slide 1: Remove minimized to animate back to center
+                    centralMessage.classList.remove('minimized');
+                    // Reset transform to allow parallax effect
+                    centralMessage.style.transform = '';
                 } else {
-                    // Moving away from slide 1: Animate to top-left, then hide
+                    // Moving away from slide 1: Animate to top-left and stay there
                     centralMessage.classList.add('minimized');
-                    // After animation completes, hide the container
-                    hideTimeout = setTimeout(() => {
-                        centralMessage.classList.add('hidden');
-                        hideTimeout = null;
-                    }, MINIMIZE_ANIMATION_DURATION);
                 }
                 
                 // Update dots
@@ -135,9 +123,9 @@
             goToSlide(nextSlide);
         }, 6000);
 
-        // Add subtle parallax effect on mouse move (only on slide 1)
+        // Add subtle parallax effect on mouse move (only on slide 1 and when not minimized)
         document.addEventListener('mousemove', function(e) {
-            if (currentSlide === 1) {
+            if (currentSlide === 1 && !centralMessage.classList.contains('minimized')) {
                 const x = (window.innerWidth - e.pageX * 2) / 100;
                 const y = (window.innerHeight - e.pageY * 2) / 100;
                 
