@@ -71,13 +71,15 @@
             const currentTopSection = currentSlideElement.querySelector('.buying-section');
             const currentBottomSection = currentSlideElement.querySelector('.selling-section');
             
-            // Add flip animation classes
-            if (flipDirection === 'normal') {
-                currentTopSection.classList.add('flipping');
-                currentBottomSection.classList.add('flipping');
-            } else {
-                currentTopSection.classList.add('flipping-reverse');
-                currentBottomSection.classList.add('flipping-reverse');
+            // Add flip animation classes only if sections exist (not for slide 1 with home-section)
+            if (currentTopSection && currentBottomSection) {
+                if (flipDirection === 'normal') {
+                    currentTopSection.classList.add('flipping');
+                    currentBottomSection.classList.add('flipping');
+                } else {
+                    currentTopSection.classList.add('flipping-reverse');
+                    currentBottomSection.classList.add('flipping-reverse');
+                }
             }
             
             // Toggle flip direction for next transition
@@ -111,8 +113,10 @@
             
             // Remove flip animation classes after animation completes
             setTimeout(() => {
-                currentTopSection.classList.remove('flipping', 'flipping-reverse');
-                currentBottomSection.classList.remove('flipping', 'flipping-reverse');
+                if (currentTopSection && currentBottomSection) {
+                    currentTopSection.classList.remove('flipping', 'flipping-reverse');
+                    currentBottomSection.classList.remove('flipping', 'flipping-reverse');
+                }
                 isFlipping = false;
             }, FLIP_ANIMATION_DURATION);
         }
