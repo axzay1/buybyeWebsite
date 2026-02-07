@@ -243,8 +243,8 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 100;
+    transform: translate(-50%, -50%) scale(1);
     /* Glassmorphism effect with fallback */
     background: rgba(255, 255, 255, 0.25); /* Fallback for non-supporting browsers */
     backdrop-filter: blur(10px);
@@ -276,11 +276,15 @@ body {
     visibility: hidden;
 }
 
+.central-message.minimized .logo-text {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
 /* Animation for central message when moving to top-left */
 .central-message.minimized {
-    top: 2rem;
-    left: 2rem;
-    transform: scale(0.4);
+    transform: translate(-50%, -50%) scale(0.4);
     padding: 0;
     /* Remove glass effect when minimized */
     background: transparent;
